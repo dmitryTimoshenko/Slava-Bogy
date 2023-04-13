@@ -28,5 +28,5 @@ async function statisticsOutput(login, scor) {
   }
 }
 
-addingAName('Dima',4321);
-statisticsOutput('Dima', 80);
+addingAName('Vanya',1234);
+statisticsOutput('Vanya', 73459);

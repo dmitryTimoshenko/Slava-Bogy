@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       password: {
         type: DataTypes.INTEGER,
-        unique: true,
       },
     },
     {
