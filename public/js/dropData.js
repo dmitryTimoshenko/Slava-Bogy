@@ -1,15 +1,15 @@
-const { Users, Static } = require('./db/models');
+const { Users, Static } = require('../../db/models');
 
-async function addingAName(login,password) {
+async function addingAName(login, password) {
   const user = await Users.findOne({ where: { login: login } }); // обращаемся к базе данных
-  const passw = await Users.findOne({ where: { password: password } })
+  const passw = await Users.findOne({ where: { password: password } });
   if (user && passw) {
     // console.log(' Юзер существует ', user.id); // если юзер есть то то просто пропускаем
     return user.id; // Вернули id конкретного юзера
   }
   const userNoNew = await Users.create({
     login: login,
-    password:password
+    password: password,
   }); // Добавление в базу имя если его небыло
 
   // console.log('Создали юзера', userNoNew.id);
@@ -28,5 +28,5 @@ async function statisticsOutput(login, scor) {
   }
 }
 
-addingAName('Vanya',1234);
+addingAName('Vanya', 1234);
 statisticsOutput('Vanya', 73459);
