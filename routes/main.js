@@ -64,4 +64,9 @@ router.post('/regComplit', async (req, res) => {
   }
 });
 
+router.get('/logout', async (req, res) => {
+  delete res.app.locals.user;
+  res.redirect('/');
+});
+
 module.exports = router;
