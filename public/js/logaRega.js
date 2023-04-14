@@ -44,8 +44,6 @@ reg.addEventListener('click', async (event) => {
       const html = result.success;
       const userName = result.html;
       if (html) {
-        form.reset();
-        wrapperHeader.insertAdjacentHTML('beforeend', userName);
         location.reload();
         return alert('Вы успешно зарегистрированны');
       } else {
@@ -72,6 +70,37 @@ log.addEventListener('click', async (event) => {
     const resultBg = await registrachiaBg.json();
     body.insertAdjacentHTML('beforeend', result.html);
     body.insertAdjacentHTML('afterbegin', resultBg.bgHtml);
+
+    const formLog = document.querySelector('.formLog');
+    formLog.addEventListener('submit', async (eventik) => {
+      eventik.preventDefault();
+      const form = eventik.target;
+
+      const login = form.login.value;
+      const password = form.password.value;
+
+      const registrachiaFull = await fetch('/logComplit', {
+        method: 'POST',
+        body: JSON.stringify({
+          login,
+          password,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      // получаем результат
+      const result = await registrachiaFull.json();
+
+      const html = result.success;
+      if (html) {
+        location.reload();
+        return alert('Вы успешно залогинизировались');
+      } else {
+        form.reset();
+        return alert('Ну не шмагла ты не шмагла');
+      }
+    });
   }
 });
 

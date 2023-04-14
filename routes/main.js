@@ -64,6 +64,18 @@ router.post('/regComplit', async (req, res) => {
   }
 });
 
+router.post('/logComplit', async (req, res) => {
+  res.app.locals.user = req.body.login;
+  const users = await User.findAll();
+  users.forEach((el) => {
+    if (el.name === req.body.login && el.password === req.body.password) {
+      res.json({ success: true });
+    } else {
+      return res.json({ success: false });
+    }
+  });
+});
+
 router.get('/logout', async (req, res) => {
   delete res.app.locals.user;
   res.redirect('/');
