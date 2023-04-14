@@ -12,6 +12,7 @@ const logger = require('morgan');
 
 // Путь поключения роутов для обработки запросов и ответов сервера
 const MainRouter = require('./routes/main');
+const BishopRouter = require('./routes/bishop');
 
 // Запускаем сервер
 const app = express();
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Сервер использует роуты из папки routes\MainRouter.js
 app.use('/', MainRouter);
+// app.use('/bishop', BishopRouter);
 
 //
 app.listen(PORT, () => {

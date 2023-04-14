@@ -5,8 +5,9 @@ const React = require('react');
 const Home = require('../views/Main');
 const Reg = require('../views/RegForm');
 const Bg = require('../views/Background');
+const Bishop = require('../views/Bishop');
 
-const router = express.Router();
+const router = require('express').Router();
 
 const { User } = require('../db/models/');
 
@@ -79,6 +80,15 @@ router.post('/logComplit', async (req, res) => {
 router.get('/logout', async (req, res) => {
   delete res.app.locals.user;
   res.redirect('/');
+});
+
+router.get('/bishop', (req, res) => {
+  // если пользователь авторизован то в app.locals есть ключ user
+  const { user } = res.app.locals;
+  const home = React.createElement(Bishop, { user });
+  const html = ReactDOMServer.renderToStaticMarkup(home);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
 });
 
 module.exports = router;

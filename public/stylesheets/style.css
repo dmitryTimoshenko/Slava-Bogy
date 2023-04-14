@@ -104,6 +104,28 @@ body {
   width: 100%;
 }
 
+.theremBishop {
+  width: 1440px;
+  min-height: 900px;
+  background: #4977aa;
+  border-radius: 20px;
+}
+.theremBishop .therem_name {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.theremBishop input {
+  display: block;
+  width: 555px;
+  height: 70px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+  margin-top: 6px;
+  margin: 20px auto 0 auto;
+}
+
 .formReg {
   position: absolute;
   width: 1440px;
