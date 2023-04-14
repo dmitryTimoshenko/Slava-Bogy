@@ -7,13 +7,19 @@ module.exports = function Main({ title, user }) {
       <div className='main'>
         <div className='container'>
           <div className='therem'>
-            <div className='therem_name'>Священики</div>
+            <a href='/bishop'>
+              <div className='therem_name'>Священики</div>
+            </a>
           </div>
           <div className='therem'>
-            <div className='therem_name'>Афроамериканцы</div>
+            <a href='/afro'>
+              <div className='therem_name'>Афроамериканцы</div>
+            </a>
           </div>
           <div className='therem'>
-            <div className='therem_name'>Южный парк</div>
+            <a href='/sousPark'>
+              <div className='therem_name'>Южный парк</div>
+            </a>
           </div>
         </div>
       </div>

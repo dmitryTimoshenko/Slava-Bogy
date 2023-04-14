@@ -133,7 +133,3 @@ body.addEventListener('click', async (event) => {
     wrapperPodlojka.remove();
   }
 });
-
-// body.addEventListener('submit', async (event) => {
-//   event.preventDefault();
-// });
