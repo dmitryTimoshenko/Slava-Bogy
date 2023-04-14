@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Layout({ title, children }) {
+module.exports = function Layout({ title, children, user }) {
   return (
     <html lang='ru'>
       <head>
@@ -30,6 +30,14 @@ module.exports = function Layout({ title, children }) {
                       Логинизация
                     </a>
                   </li>
+                  {user && (
+                    <>
+                      <li className='nav_item'>Привет! {user}</li>
+                      <li className='nav_item'>
+                        <a href='/logout'>Выход</a>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </nav>
             </div>

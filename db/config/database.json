@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "Asved012",
     "database": "Slava-Bogy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "postgres",
+    "password": "Asved012",
+    "database": "Slava-Bogy",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "postgres",
+    "password": "Asved012",
+    "database": "Slava-Bogy",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
